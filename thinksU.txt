@@ -1,0 +1,96 @@
+声明：本文内容是从廖雪峰的教程中所学，只提供一个简单的指令工具功能。（更新中）
+https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000
+
+
+Git Bash（Windows）
+git config --global user.name “自定义Name”
+
+git config --global user.email “Your Emailaddress”  在机器上所有的Git仓库使用该配置
+
+mkdir filename  创建文件夹
+
+cd filename  进入文件夹
+
+cat filename  查看文件内容
+
+pwd  显示该目录下的所有文件
+
+git init   让当前目录成为Git可管理的仓库
+
+git add filename  将文件放入暂存区
+
+git commit -m“备注”  将暂存区的所有内容提交到当前分支
+
+git status  查看状态
+
+git diff filename  查看工作区和版本库中各自最新版本的区别
+
+git log  显示从由近而远的提交日志
+
+git log --pretty=oneline 精简版
+
+git reset --hard HEAD^（or commitID） 回溯当前版本的上一个版本（HEAD^^即回溯至上上个版本）
+
+git reset HEAD filename  把暂存区的修改退回到工作区
+
+git relog 记录每一次命令
+
+git checkout -- filename  撤销工作区的全部修改至最近一次的git add或git commit的状态（用版本库的版本替换工作区的版本）
+
+git checkout branchname  切换到分支
+
+git checkout -b BranchName  创建并切换至该分支
+
+rm filename 在工作区删除文件
+
+git rm filename，git commit 确认从版本库中删除文件
+
+ssh-keygen -t rsa -C “Your EmailAddress” 创建SSH KEY
+
+git remote add origin git@github.com：GitHub账户名/本地仓库.git     将本地仓库关联到GitHub仓库（远程库名为 origin）
+
+git push （-u） origin master  将本地库的所有内容（当前分支）推送到远程库 首推需要-u
+
+git clone git@github.com：GitHub账户名/远程库名.git  将远程库克隆到本地
+
+git branch 查看当前分支
+
+git merge BranchName  将该分支合并到当前分支
+
+git merge --no--ff -m“ ” 分支名  将分支以no--ff的模式合并而不是fast forward
+
+git branch -d BranchName 删除该分支
+
+git log --graph  查看分支合并图
+
+git stash  暂存工作区
+
+git stash list  查看存储的工作区
+
+git stash apply stash@{0}  恢复指定工作区
+
+git stash drop  删除stash内容
+
+git stash pop  恢复并删除 （我在WIN7下的最新版中只有修改没有删除）
+
+git remote -v 查看远程库信息
+
+git push origin master  推送分支到远程库 origin是库名，master分支名
+
+git checkout -b dev origin/dev 在本地创建和远程分支对应的分支
+
+git pull  抓取最新提交
+
+git branch --set-upstream branch-name origin/branch-name  创建本地分支与远程分支的链接关系
+
+git tag  查看所有标签
+
+git tag (-a) (-s) v1.0 -m " ... "  在某个分支创建新标签  -a指定标签信息 -s用PGP签名
+
+git show tagname  查看标签信息
+
+git tag -d tagname  删除本地标签
+
+git push origin tagname(--tags)  推送标签到远程
+
+git push origin :refs/tags/tagname  删除远程标签
